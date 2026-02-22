@@ -1,5 +1,8 @@
 public class ComputeArray {
     public static int[] computeArray(int[] array) {
+        if (array == null){
+            return new  int[0] ; 
+        }
         for (int i = 0; i < array.length; i++) {
             if (array[i] % 3 == 0) {
                 array[i] *= 5;
