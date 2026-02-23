@@ -41,11 +41,8 @@ public class FileManager {
     }
 
     public static void main(String[] args) throws IOException {
-        String testString ="""
-                    This file has many lines
-                    Here is the second.
-                    And there is the 3rd !""";
-        FileManager.createFile("file.txt", testString);
+        
+        FileManager.createFile("file.txt", "Lorem ipsum");
         System.out.println(FileManager.getContentFile("file.txt"));
         FileManager.deleteFile("file.txt");
     }
