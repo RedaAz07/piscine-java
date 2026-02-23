@@ -28,8 +28,9 @@ public class FileManager {
             while (scann.hasNextLine()) {
                 String data = scann.nextLine();
                 res.append(data);
+                res.append("\n");
             }
-            return res.toString();
+            return res.toString().trim();
         }
     }
     public static void deleteFile(String fileName) {
@@ -40,7 +41,11 @@ public class FileManager {
     }
 
     public static void main(String[] args) throws IOException {
-        FileManager.createFile("file.txt", "Lorem ipsum");
+        String testString ="""
+                    This file has many lines
+                    Here is the second.
+                    And there is the 3rd !""";
+        FileManager.createFile("file.txt", testString);
         System.out.println(FileManager.getContentFile("file.txt"));
         FileManager.deleteFile("file.txt");
     }
