@@ -14,11 +14,11 @@ public class Capitalize {
         try (Scanner myReader = new Scanner(input)) {
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
-                String[] arr = data.split("\\ ");
+                String[] arr = data.split("\\s+");
                 StringBuilder result = new StringBuilder();
                 for (String el : arr) {
                     if (el.length() == 0) {
-                        return;
+                        continue;
                     }
                     String ch = Character.toString(el.charAt(0));
                     String sub = el.substring(1);
