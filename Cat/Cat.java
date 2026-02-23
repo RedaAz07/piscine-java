@@ -6,12 +6,16 @@ public class Cat {
         if (args.length != 1) {
             return;
         }
-        FileReader myFile = new FileReader(args[0]);
-        try (BufferedReader reader = new BufferedReader(myFile)) {
-            while (reader.readLine() != null) {
-                System.out.print(reader.readLine());
+        File myFile = new File(args[0]);
+        try (InputStream in = new BufferedInputStream(new FileInputStream(myFile))) {
+            OutputStream out = System.out; 
+            byte[] buf = new byte[8192];
+            int n;
+            while ((n = in.read(buf)) != -1) {
+                out.write(buf, 0, n);
             }
-        } catch (Exception e) {
+            out.flush();
+        } catch (IOException e) {
             return;
         }
 
