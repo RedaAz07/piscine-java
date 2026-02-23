@@ -24,8 +24,9 @@ public class Capitalize {
                     String sub = el.substring(1);
                     String res = ch.toUpperCase() + sub.toLowerCase();
                     result.append(res);
+                    result.append(" ");
                 }
-                myWriter.write(result.toString());
+                myWriter.write(result.toString().trim());
                 myWriter.close();
 
             }
