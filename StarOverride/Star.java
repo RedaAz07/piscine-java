@@ -36,7 +36,7 @@ public class Star extends CelestialObject {
     public boolean equals(Object obj) {
         if (this == obj)
             return true;
-        if (obj == null)
+        if (obj == null || getClass() != obj.getClass())
             return false;
         Star that = (Star) obj;
         return Double.compare(that.x, this.x) == 0 &&
