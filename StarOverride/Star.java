@@ -1,0 +1,65 @@
+import java.util.Objects;
+
+public class Star extends CelestialObject {
+    private double magnitude;
+
+    public double getMagnitude() {
+        return this.magnitude;
+    }
+
+    public void setMagnitude(double m) {
+        this.magnitude = m;
+    }
+
+    public Star() {
+        this.name = "Soleil";
+        this.x = 0.0;
+        this.y = 0.0;
+        this.z = 0.0;
+        this.magnitude = 0.0;
+    }
+
+    public Star(String name, double x, double y, double z, double magnitude) {
+        this.name = name;
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        this.magnitude = magnitude;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s shines at the %.3f magnitude", this.name, this.magnitude);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        Star that = (Star) obj;
+        return Double.compare(that.x, this.x) == 0 &&
+                Double.compare(that.y, this.y) == 0 &&
+                Double.compare(that.z, this.z) == 0 &&
+                Double.compare(that.magnitude, this.magnitude) == 0 &&
+                Objects.equals(this.name, that.name);
+
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, x, y, z, magnitude);
+    }
+
+    public static void main(String[] args) {
+        Star star = new Star();
+        Star star2 = new Star();
+        Star proxima = new Star("Proxima", 18.389, 832.32, 218, 0.4);
+
+        System.out.println(star.toString());
+        System.out.println(proxima.toString());
+        System.out.println(star.equals(star2));
+        System.out.println(star.equals(proxima));
+    }
+}
