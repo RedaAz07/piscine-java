@@ -1,3 +1,4 @@
+import java.util.Objects;
 
 public class CelestialObject {
     public double x;
@@ -67,13 +68,23 @@ public class CelestialObject {
         return String.format("%s is positioned at (%.3f, %.3f, %.3f)", this.name, this.x, this.y, this.z);
     }
 
-    public boolean equals(CelestialObject object) {
-     
-        return object.name.equals(this.name) && object.x == this.x && object.y == this.y && object.z == this.z;
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        CelestialObject that = (CelestialObject) obj;
+        return Double.compare(that.x, this.x) == 0 &&
+                Double.compare(that.y, this.y) == 0 &&
+                Double.compare(that.z, this.z) == 0 &&
+                Objects.equals(this.name, that.name);
 
     }
 
-     public static void main(String[] args) {
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, x, y, z);
+    }
+
+    public static void main(String[] args) {
         CelestialObject celestialObject = new CelestialObject();
         CelestialObject earth = new CelestialObject("Terre", 1.0, 2.0, 2.0);
         CelestialObject earth1 = new CelestialObject("Terre", 1.0, 2.0, 2.0);
