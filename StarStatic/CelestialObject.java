@@ -53,9 +53,9 @@ public class CelestialObject {
     }
 
     public static double getDistanceBetween(CelestialObject first, CelestialObject end) {
-        double dx = end.x - end.x;
-        double dy = end.y - end.y;
-        double dz = end.z - end.z;
+        double dx = end.x - first.x;
+        double dy = end.y - first.y;
+        double dz = end.z - first.z;
         return Math.sqrt(dx * dx + dy * dy + dz * dz);
     }
 
