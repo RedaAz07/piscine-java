@@ -4,14 +4,14 @@ public class CelestialObject {
     public double z;
     public String name;
 
-    CelestialObject() {
+   public  CelestialObject() {
         this.x = 0.0;
         this.y = 0.0;
         this.z = 0.0;
         this.name = "Soleil";
     }
 
-    CelestialObject(String name, double x, double y, double z) {
+  public   CelestialObject(String name, double x, double y, double z) {
         this.x = x;
         this.y = y;
         this.z = z;
