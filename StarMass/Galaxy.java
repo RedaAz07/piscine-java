@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Galaxy {
-    private List<CelestialObject> celestialObjects;
+    private final  List<CelestialObject> celestialObjects;
 
     public Galaxy() {
         this.celestialObjects = new ArrayList<>();
