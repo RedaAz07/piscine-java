@@ -5,7 +5,7 @@
         public double y;
         public double z;
         public String name;
-        public double  mass;
+        public int  mass;
         public static final double KM_IN_ONE_AU = 150000000;
 
         public CelestialObject() {
@@ -13,10 +13,10 @@
             this.x = 0.0;
             this.y = 0.0;
             this.z = 0.0;
-            this.mass = 0.0;
+            this.mass = 0;
         }
 
-        public CelestialObject(String name, double x, double y, double z, double   mass) {
+        public CelestialObject(String name, double x, double y, double z, int   mass) {
             this.name = name;
             this.x = x;
             this.y = y;
@@ -24,11 +24,11 @@
             this.mass = mass;
         }
 
-        public double   getMass() {
+        public int   getMass() {
             return this.mass;
         }
 
-        public void setMass(double  mass) {
+        public void setMass(int  mass) {
             this.mass = mass;
         }
 
