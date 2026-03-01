@@ -67,10 +67,9 @@ public class Character {
         }
     }
 
-    public static Character fight(Object char1, Object char2) {
+    public static Character fight(Character char1, Character char2) {
         Character a = (Character) char1;
         Character b = (Character) char2;
-
         while (true) {
             a.attack(b);
             if (b.getCurrentHealth() == 0) {
