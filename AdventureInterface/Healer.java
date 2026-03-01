@@ -1,5 +1,5 @@
 public interface Healer {
     public void heal(Character cha);
 
-    public void getHealCapacity();
+    public Integer getHealCapacity();
 }
