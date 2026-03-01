@@ -5,9 +5,13 @@ import java.util.List;
 public class Character {
 
     private final int maxHealth;
-    public  int currentHealth;
+    private int currentHealth;
     private final String name;
-    private static List<Character> allCharacters = new ArrayList<>() ;
+    private static List<Character> allCharacters = new ArrayList<>();
+
+    public void setCurrentHealth(int i) {
+        this.currentHealth = i;
+    }
 
     public int getMaxHealth() {
         return maxHealth;
@@ -74,15 +78,15 @@ public class Character {
             a.attack(b);
             if (b.getCurrentHealth() == 0) {
                 return a;
-            } 
+            }
             b.attack(a);
             if (a.getCurrentHealth() == 0) {
                 return b;
-            } 
+            }
         }
     }
 
-   public static void main(String[] args) {
+    public static void main(String[] args) {
         System.out.print(Character.printStatus());
 
         Character aragorn = new Character("Aragorn", 20);
