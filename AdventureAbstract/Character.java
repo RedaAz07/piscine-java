@@ -9,7 +9,7 @@ public abstract  class Character {
     private final String name;
     private static List<Character> allCharacters = new ArrayList<>();
 
-    public void setCurrentHealth(int i) {
+    protected  void  setCurrentHealth(int i) {
         this.currentHealth = i;
     }
 
