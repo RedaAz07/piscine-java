@@ -7,15 +7,15 @@ public class Character {
     private final String name;
 
     public int getMaxHealth() {
-        return this.maxHealth;
+        return maxHealth;
     }
 
     public int getCurrentHealth() {
-        return this.currentHealth;
+        return currentHealth;
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public Character(String name, int maxHealth) {
@@ -47,5 +47,4 @@ public class Character {
         chart.takeDamage(9);
     }
 
-   
 }
