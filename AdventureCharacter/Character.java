@@ -27,18 +27,18 @@ public class Character {
     @Override
     public String toString() {
         if (currentHealth == 0) {
-            return String.format("%s :KO", name);
+            return String.format("%s :KO", this.name);
         } else {
-            return String.format("%s : %d/%d", name, currentHealth, maxHealth);
+            return String.format("%s : %d/%d", this.name, this.currentHealth, this.maxHealth);
         }
 
     }
 
     public void takeDamage(int nb) {
-        if (currentHealth - nb >= 0) {
-            currentHealth -= nb;
+        if (this.currentHealth - nb >= 0) {
+            this.currentHealth -= nb;
         } else {
-            currentHealth = 0;
+            this.currentHealth = 0;
         }
 
     }
@@ -47,18 +47,5 @@ public class Character {
         chart.takeDamage(9);
     }
 
-    public static void main(String[] args) {
-        Character aragorn = new Character("Aragorn", 20);
-        Character uruk = new Character("Uruk", 5);
-        System.out.println(aragorn.toString());
-        System.out.println(uruk.toString());
-
-        aragorn.attack(uruk);
-
-        System.out.println(uruk.toString());
-
-        aragorn.takeDamage(12);
-
-        System.out.println(aragorn.toString());
-    }
+   
 }
