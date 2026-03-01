@@ -26,19 +26,19 @@ public class Character {
 
     @Override
     public String toString() {
-        if (this.currentHealth == 0) {
-            return String.format("%s :KO", this.name);
+        if (currentHealth == 0) {
+            return String.format("%s :KO", name);
         } else {
-            return String.format("%s : %d/%d", this.name, this.currentHealth, this.maxHealth);
+            return String.format("%s : %d/%d", name, currentHealth, maxHealth);
         }
 
     }
 
     public void takeDamage(int nb) {
-        if (this.currentHealth - nb >= 0) {
-            this.currentHealth -= nb;
+        if (currentHealth - nb >= 0) {
+            currentHealth -= nb;
         } else {
-            this.currentHealth = 0;
+            currentHealth = 0;
         }
 
     }
