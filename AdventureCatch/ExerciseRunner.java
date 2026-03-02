@@ -1,6 +1,6 @@
 public class ExerciseRunner {
 
-    public static void main(String[] args) {
+     public static void main(String[] args) {
         Weapon excalibur = new Weapon("Excalibur", 7);
         Weapon baton = new Weapon("Baton", 3);
         Templar arthur = new Templar("Arthur", 30, 5, 3, excalibur);

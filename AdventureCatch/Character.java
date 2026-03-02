@@ -73,17 +73,21 @@ public abstract class Character {
         Character b = (Character) char2;
         while (true) {
             try {
-                
+
                 a.attack(b);
-                if (b.getCurrentHealth() == 0) {
-                    return a;
-                }
-                b.attack(a);
-                if (a.getCurrentHealth() == 0) {
-                    return b;
-                }
+
             } catch (Exception e) {
-                System.err.println("e");
+            }
+            if (b.getCurrentHealth() == 0) {
+                return a;
+            }
+            try {
+
+                b.attack(a);
+            } catch (Exception e) {
+            }
+            if (a.getCurrentHealth() == 0) {
+                return b;
             }
         }
     }
