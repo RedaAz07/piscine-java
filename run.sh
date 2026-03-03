@@ -20,5 +20,4 @@ done
 
 echo "All files created successfully."
 
-cd $folder
-code  . 
+code  $folder
