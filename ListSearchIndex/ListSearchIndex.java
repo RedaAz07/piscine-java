@@ -4,7 +4,9 @@ import java.util.List;
 public class ListSearchIndex {
     public static Integer findLastIndex(List<Integer> list, Integer value) {
         // your code here
-        if (list.isEmpty() ) {
+        if (list== null) return null;
+
+        if (list.isEmpty()  ) {
             return null;
         }
         for (int i = list.size()-1; i >= 0; i--) {
@@ -18,6 +20,8 @@ public class ListSearchIndex {
 
     public static Integer findFirstIndex(List<Integer> list, Integer value) {
         // your code here
+        if (list== null) return null;
+
         if (list.isEmpty() ) {
             return null;
         }
@@ -31,8 +35,9 @@ public class ListSearchIndex {
     }
 
     public static List<Integer> findAllIndexes(List<Integer> list, Integer value) {
+        if (list== null) return null;
         List<Integer> res = new ArrayList<>();
-        if (list.isEmpty() ) {
+        if (list.isEmpty() || list==null ) {
             return null;
         }
         for (int i = 0; i < list.size(); i++) {
@@ -46,7 +51,7 @@ public class ListSearchIndex {
     }
 
     public static void main(String[] args) {
-        System.out.println(ListSearchIndex.findLastIndex(List.of(9, 13, 89, 8, 23, 1, 0, 89), 89));
+        System.out.println(ListSearchIndex.findLastIndex(null, 89));
         System.out.println(ListSearchIndex.findFirstIndex(List.of(9, 13, 89, 8, 23, 1, 0, 89), 89));
         System.out.println(ListSearchIndex.findAllIndexes(List.of(9, 13, 89, 8, 23, 1, 0, 89), 89).toString());
     }
