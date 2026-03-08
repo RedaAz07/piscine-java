@@ -9,8 +9,9 @@ public class FormatDate {
 
     public static String formatToFullText(LocalDateTime dateTime) {
         // your code here
+        if (dateTime ==  null)  return  null;
         Month m = dateTime.getMonth();
-        String frenchMonth = m.getDisplayName(TextStyle.FULL, Locale.FRANCE);
+        String frenchMonth = m.getDisplayName(TextStyle.SHORT, Locale.FRANCE);
 
         return String.format("Le %d %s de l'an %d à %dh%dm et %ds", dateTime.getDayOfMonth(),
                 frenchMonth,
@@ -19,6 +20,8 @@ public class FormatDate {
     }
 
     public static String formatSimple(LocalDate date) {
+        if (date ==  null)  return  null;
+
         Month m = date.getMonth();
         String it = m.getDisplayName(TextStyle.FULL, Locale.ITALIAN);
         return String.format("%s %d %d", it, date.getDayOfMonth(), date.getYear()%100);
@@ -26,8 +29,10 @@ public class FormatDate {
     }
 
     public static String formatIso(LocalTime time) {
+        if (time ==  null)  return  null;
+
         // your code here
-        return String.format("%d:%d:%d.00%d", time.getHour(), time.getMinute(), time.getSecond(), time.getNano());
+        return String.format("%d:%d:%d", time.getHour(), time.getMinute(), time.getSecond(), time.getNano());
     }
 
     public static void main(String[] args) {
