@@ -30,7 +30,7 @@ public class ParseDate {
         // your code 
        
         DateTimeFormatter formatter =
-                DateTimeFormatter.ofPattern("HH 'hours in the evening, 'mm 'minutes and 'ss 'seconds'");
+                DateTimeFormatter.ofPattern("hh 'hours' B, mm 'minutes and' ss 'seconds'");
 
         LocalTime date = LocalTime.parse(stringDate, formatter); 
         return date;   
